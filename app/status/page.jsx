@@ -7,6 +7,7 @@ export async function getData(url) {
     method: "GET",
     headers: {
       Accept: "application/json",
+      next: { revalidate: 3600 },
     },
   });
   const parseData = await dataFetch.json();
